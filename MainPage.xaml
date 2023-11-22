@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HikeManagement.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="10,0"
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand">
+
+            <Frame Padding="5" CornerRadius="4">
+                <Label Text="Add New Hike" HorizontalOptions="Center" TextColor="BlueViolet" FontSize="Title"/>
+            </Frame>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Name" VerticalOptions="Center" Margin="0, 0, 30, 0" HorizontalOptions="Start"/>
+                <Entry x:Name="txtName" Placeholder="Enter hike name" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Location" VerticalOptions="Center" Margin="0, 0, 30, 0" HorizontalOptions="Start"/>
+                <Entry x:Name="txtLocation" Placeholder="Enter location" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Date" VerticalOptions="Center" Margin="0, 0, 30, 0" />
+                <DatePicker x:Name="dtpDate" Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Parking" VerticalOptions="Center" Margin="0, 0, 30, 0" />
+                <Switch x:Name="swtParking" VerticalOptions="Center"></Switch>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Distance" VerticalOptions="Center" Margin="0, 0, 30, 0" HorizontalOptions="Start"/>
+                <Entry x:Name="txtDistance" Placeholder="Enter hike length" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Difficulty" VerticalOptions="Center" Margin="0, 0, 30, 0" HorizontalOptions="Start"/>
+                <Picker x:Name="cbxDifficulty" Title="Please select" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Chill</x:String>
+                        <x:String>Newbie</x:String>
+                        <x:String>Amauter</x:String>
+                        <x:String>Proffesional</x:String>
+                        <x:String>Master</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Description" VerticalOptions="Center" Margin="0, 0, 30, 0" HorizontalOptions="Start"/>
+                <Entry x:Name="txtDescription" Placeholder="Enter description" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Accomodation" VerticalOptions="Center" Margin="0, 0, 30, 0" HorizontalOptions="Start"/>
+                <Entry x:Name="txtAccomodation"  Placeholder="Enter location" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="btnSubmit"
+                Text="SAVE"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="btnSubmit_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="btnList"
+                Text="LIST"
+                SemanticProperties.Hint="Show Hike list"
+                Clicked="btnList_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="btnLoad"
+                Text="LOAD HIKE FROM DB"
+                Clicked="btnLoad_Hike_Clicked"
+                HorizontalOptions="Center"
+                />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
